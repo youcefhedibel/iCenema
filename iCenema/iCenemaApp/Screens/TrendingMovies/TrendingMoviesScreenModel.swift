@@ -2,7 +2,7 @@
 //  TrendingMoviesScreenModel.swift
 //  iCenema
 //
-//  Created by mac on 10/12/2023.
+//  Created by youcef hedibel on 10/12/2023.
 //
 
 import Foundation
@@ -11,7 +11,7 @@ extension TrendingMoviesScreen {
     @MainActor
     class Model: ObservableObject {
         
-        @Published private var _uiState: UiState<[Movie]> = .idle
+        @Published private var _uiState: UiState<[Movie]> = .loading
         var uiState: UiState<[Movie]> { get { return _uiState } }
         
         func discoverMovies() {

@@ -2,7 +2,7 @@
 //  MoviesRepository.swift
 //  iCenema
 //
-//  Created by mac on 10/12/2023.
+//  Created by youcef hedibel on 10/12/2023.
 //
 
 import Foundation
@@ -13,7 +13,7 @@ class MoviesRepository: NetworkService {
     
     private enum Urls: String {
         case trendingMovies = "discover/movie"
-        case movieDetails = ""
+        case movieDetails = "movie/{movie_id}"
     }
     
     static func getDiscoverMovie(page: Int,success: @escaping (Movies) -> Void, failed: @escaping (ErrorResponse?) -> Void) {
@@ -25,6 +25,10 @@ class MoviesRepository: NetworkService {
             "sort_by": "popularity.desc"
         ]
         sharedNS.get(url: Urls.trendingMovies.rawValue, query: query, success: success, failed: failed)
+    }
+    
+    static func getMovieDetail(id: Int, success: @escaping (Movie) -> Void, failed: @escaping (ErrorResponse?) -> Void) {
+        sharedNS.get(url: Urls.movieDetails.rawValue.replacingOccurrences(of: "{movie_id}", with: id.description), success: success, failed: failed)
     }
     
 }

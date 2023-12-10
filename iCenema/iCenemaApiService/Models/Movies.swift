@@ -2,7 +2,7 @@
 //  Movie.swift
 //  iCenema
 //
-//  Created by mac on 10/12/2023.
+//  Created by youcef hedibel on 10/12/2023.
 //
 
 import Foundation
@@ -23,6 +23,9 @@ struct Movie: Decodable, Identifiable {
     let backdrop_path: String
     let vote_average: Float
     let vote_count: Int
+    let release_date: String?
+    let genres: [Genre]?
+    let runtime: Int?
     
     var backdropUrl: URL? {
         let baseURL = URL(string: "https://image.tmdb.org/t/p/w500")
@@ -33,5 +36,24 @@ struct Movie: Decodable, Identifiable {
         let baseURL = URL(string: "https://image.tmdb.org/t/p/w100")
         return baseURL?.appending(path: poster_path)
     }
+    
+    var formmated_release_date: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        if let date = dateFormatter.date(from: release_date ?? "") {
+            let calendar = Calendar.current
+            return String(calendar.component(.year, from: date))
+        } else {
+            return "././"
+        }
+    }
+    
+    var formatted_runtime: String {
+        let hours = (runtime ?? 0) / 60
+        let minutes = (runtime ?? 0) % 60
+        return "\(hours)h \(minutes)m"
+    }
+    
+    
 
 }
