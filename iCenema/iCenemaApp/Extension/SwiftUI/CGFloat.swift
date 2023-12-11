@@ -25,33 +25,4 @@ extension CGFloat {
     static func heightPer(per: Double) -> Double {
         return screenHeight * per
     }
-    
-    static var topInsets: Double {
-        if let keyWindow = UIApplication.shared.keyWindow {
-            return keyWindow.safeAreaInsets.top
-        }
-        return 0.0
-    }
-    
-    static var bottomInsets: Double {
-        if let keyWindow = UIApplication.shared.keyWindow {
-            return keyWindow.safeAreaInsets.bottom
-        }
-        return 0.0
-    }
-    
-    static var horizontalInsets: Double {
-        if let keyWindow = UIApplication.shared.keyWindow {
-            return keyWindow.safeAreaInsets.left + keyWindow.safeAreaInsets.right
-        }
-        return 0.0
-    }
-    
-    static var verticalInsets: Double {
-        if let keyWindow = UIApplication.shared.keyWindow {
-            return keyWindow.safeAreaInsets.top + keyWindow.safeAreaInsets.bottom
-        }
-        return 0.0
-    }
-    
 }

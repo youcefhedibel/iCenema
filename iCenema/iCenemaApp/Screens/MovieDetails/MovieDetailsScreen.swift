@@ -52,7 +52,7 @@ struct MovieDetailsScreen: View {
         VStack{
             HStack(spacing:5){
                 Text(movie.original_title)
-                    .font(.white, .bold, 26)
+                    .font(.primaryText, .bold, 26)
                 Spacer()
                 Image(systemName: "star.fill")
                     .font(.system(size: 14))
@@ -71,9 +71,9 @@ struct MovieDetailsScreen: View {
                 Spacer()
                 Image(systemName: "clock.fill")
                     .font(.system(size: 14))
-                    .foregroundColor(.white)
+                    .foregroundColor(.primaryText)
                 Text(movie.formatted_runtime)
-                    .font(.white, .regular, 16)
+                    .font(.primaryText, .regular, 16)
 
             }.padding(.horizontal)
         }
@@ -85,9 +85,9 @@ struct MovieDetailsScreen: View {
         ScrollView{
             VStack(alignment: .leading, spacing: 20) {
                        Text("About film")
-                           .font(.white, .bold, 20)
+                           .font(.primaryText, .regular, 20)
                        Text(text)
-                           .font(.white, .regular, 18)
+                           .font(.primaryText, .medium, 16)
                            .multilineTextAlignment(.leading)
                            .padding()
                            .background(RoundedRectangle(cornerRadius:15).foregroundColor(.secondaryApp))
@@ -99,7 +99,7 @@ struct MovieDetailsScreen: View {
     @ViewBuilder
     private func roundedTextComponent(text: String) -> some View {
         Text(text)
-            .font(.white, .semiBold, 14)
+            .font(.primaryText, .semiBold, 14)
             .padding(5)
             .background(RoundedRectangle(cornerRadius:15).foregroundColor(.secondaryApp))
     }

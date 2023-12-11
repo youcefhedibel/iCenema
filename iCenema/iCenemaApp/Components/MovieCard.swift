@@ -29,7 +29,7 @@ struct MovieCard: View {
             VStack(spacing: 10) {
                 HStack {
                     Text(movieItem.original_title)
-                        .font(.white, .semiBold, 20)
+                        .font(.primaryText, .semiBold, 20)
                     Spacer()
                 }
                 
@@ -41,7 +41,7 @@ struct MovieCard: View {
                         .foregroundColor(.yellow)
                     Spacer()
                     Text(String(movieItem.vote_count))
-                        .font(.white, .semiBold, 18)
+                        .font(.primaryText, .semiBold, 18)
                     Image(systemName: "hand.thumbsup.fill")
                         .font(.system(size: 14))
                         .foregroundColor(.blue)

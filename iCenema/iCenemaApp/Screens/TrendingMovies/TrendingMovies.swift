@@ -20,7 +20,7 @@ struct TrendingMoviesScreen: View {
                 VStack {
                     HStack{
                         Text("Trending movies")
-                            .font(.white, .bold, 24)
+                            .font(.primaryText, .bold, 24)
                             .padding(.horizontal, 16)
                             .padding(.vertical, 8)
                         Spacer()
@@ -38,10 +38,10 @@ struct TrendingMoviesScreen: View {
                             Spacer()
                                 Image(systemName: "magnifyingglass")
                                 .font(.system(size: 34))
-                                .foregroundColor(.white)
+                                .foregroundColor(.primaryText)
                                 .padding()
                                 Text("Sorry! No result found (:")
-                                .font(.white, .regular, 22)
+                                .font(.primaryText, .regular, 22)
                             Spacer()
                         } else {
                             ScrollView(showsIndicators: false){
@@ -74,9 +74,9 @@ struct TrendingMoviesScreen: View {
                         Spacer()
                         Image(systemName: "network")
                             .font(.system(size: 40))
-                            .foregroundColor(.white)
+                            .foregroundColor(.primaryText)
                         Text(errorMsg ?? "")
-                            .font(.white, .regular, 20)
+                            .font(.primaryText, .regular, 20)
                         Spacer()
                     default: EmptyView()
                     }
