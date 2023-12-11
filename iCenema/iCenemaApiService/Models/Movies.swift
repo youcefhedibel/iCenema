@@ -20,7 +20,7 @@ struct Movie: Decodable, Identifiable {
     let overview: String
     let original_language: String
     let poster_path: String
-    let backdrop_path: String
+    let backdrop_path: String?
     let vote_average: Float
     let vote_count: Int
     let release_date: String?
@@ -29,7 +29,7 @@ struct Movie: Decodable, Identifiable {
     
     var backdropUrl: URL? {
         let baseURL = URL(string: "https://image.tmdb.org/t/p/w500")
-        return baseURL?.appending(path: backdrop_path)
+        return baseURL?.appending(path: backdrop_path ?? "")
     }
     
     var posterPathUrl: URL? {

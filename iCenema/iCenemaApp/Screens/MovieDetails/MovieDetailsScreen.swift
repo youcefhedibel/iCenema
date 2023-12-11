@@ -34,19 +34,8 @@ struct MovieDetailsScreen: View {
                         .scaledToFit()
                         .cornerRadius(10)
                         .padding(.horizontal)
-                    
                     movieInfoComponent(movie: movie)
-                    
-                    VStack(alignment: .leading, spacing: 20) {
-                        Text("About film")
-                            .font(.white, .bold, 20)
-                        Text(movie.overview)
-                            .font(.white, .regular, 18)
-                            .multilineTextAlignment(.leading)
-                            .padding()
-                            .background(RoundedRectangle(cornerRadius:15).foregroundColor(.secondaryApp))
-                    }.padding()
-                    
+                    aboutMovieCOmponent(text: movie.overview)
                     Spacer()
                 default: EmptyView()
                 }
@@ -89,6 +78,19 @@ struct MovieDetailsScreen: View {
             }.padding(.horizontal)
         }
 
+    }
+    
+    @ViewBuilder
+    private func aboutMovieCOmponent(text: String) -> some View{
+        VStack(alignment: .leading, spacing: 20) {
+            Text("About film")
+                .font(.white, .bold, 20)
+            Text(text)
+                .font(.white, .regular, 18)
+                .multilineTextAlignment(.leading)
+                .padding()
+                .background(RoundedRectangle(cornerRadius:15).foregroundColor(.secondaryApp))
+        }.padding()
     }
     
     @ViewBuilder

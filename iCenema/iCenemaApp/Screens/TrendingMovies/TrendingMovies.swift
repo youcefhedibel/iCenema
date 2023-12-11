@@ -33,13 +33,29 @@ struct TrendingMoviesScreen: View {
                         Spacer()
                     case .success(let movies):
                         ScrollView(showsIndicators: false){
-                                ForEach(movies) { movie in
+                            LazyVStack{
+                                ForEach(model.listOfMovies) { movie in
                                     NavigationLink {
                                         MovieDetailsScreen(movieID: movie.id)
                                     } label: {
                                         MovieCard(movieItem: movie)
+                                            .onAppear{
+                                                if movies.last?.id == movie.id {
+                                                   model.loadMoreMovies()
+                                                }
+                                            }
                                     }
                                 }
+                            }
+                            Spacer().frame(height:  16)
+                            if model.isLoadingMore {
+                                VStack{
+                                    Spacer()
+                                    CircularProgress().frame(width: 40, height: 40).padding(.bottom, 10)
+                                    Spacer()
+                                }
+                            }
+                    
                         }
 
                     case .failed(let errorMsg):

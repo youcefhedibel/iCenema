@@ -1,0 +1,26 @@
+{
+  "images" : [
+    {
+      "filename" : "SplashiCenem.png",
+      "idiom" : "universal",
+      "resizing" : {
+        "cap-insets" : {
+          "bottom" : 448,
+          "left" : 207,
+          "right" : 207,
+          "top" : 447
+        },
+        "center" : {
+          "height" : 1,
+          "mode" : "tile",
+          "width" : 1
+        },
+        "mode" : "9-part"
+      }
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

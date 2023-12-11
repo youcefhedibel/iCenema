@@ -32,6 +32,7 @@
 		049B8DC32B264855009DF89A /* MovieDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049B8DC22B264855009DF89A /* MovieDetailsScreen.swift */; };
 		049B8DC52B265073009DF89A /* MovieDetailScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049B8DC42B265073009DF89A /* MovieDetailScreenModel.swift */; };
 		049B8DC72B26615F009DF89A /* Gengre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049B8DC62B26615F009DF89A /* Gengre.swift */; };
+		04E6D7A92B27128500A680B5 /* IcenemaLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E6D7A82B27128500A680B5 /* IcenemaLaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		049B8DC22B264855009DF89A /* MovieDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsScreen.swift; sourceTree = "<group>"; };
 		049B8DC42B265073009DF89A /* MovieDetailScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailScreenModel.swift; sourceTree = "<group>"; };
 		049B8DC62B26615F009DF89A /* Gengre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gengre.swift; sourceTree = "<group>"; };
+		04E6D7A82B27128500A680B5 /* IcenemaLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IcenemaLaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		040B00B22B25C276004DAE1C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				04E6D7A72B27126B00A680B5 /* LaunchScreen */,
 				040B00CC2B25D53E004DAE1C /* TrendingMovies */,
 				040B00D22B25EAF0004DAE1C /* MovieDetails */,
 			);
@@ -250,6 +253,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		04E6D7A72B27126B00A680B5 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				04E6D7A82B27128500A680B5 /* IcenemaLaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -316,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E6D7A92B27128500A680B5 /* IcenemaLaunchScreen.storyboard in Resources */,
 				040B00B12B25C269004DAE1C /* NotoSans_Condensed-Medium.ttf in Resources */,
 				040B00AF2B25C269004DAE1C /* NotoSans-Bold.ttf in Resources */,
 				040B00B02B25C269004DAE1C /* NotoSans_ExtraCondensed-Regular.ttf in Resources */,
@@ -474,6 +486,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iCenema/Preview Content\"";
@@ -484,6 +497,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = IcenemaLaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -504,6 +519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iCenema/Preview Content\"";
@@ -514,6 +530,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = IcenemaLaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
