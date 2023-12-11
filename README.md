@@ -13,7 +13,7 @@ Its intuitive design provides a delightful user experience, allowing users to ex
 * Movie detais(year of production, rating, category..).
 * Movie search.
 
-### app architecture:
+### (*) app architecture:
 - The iCenema app follows the Model-View-ViewModel (MVVM) architecture:
 - Model:
   - Represents the data layer and business logic.
@@ -31,7 +31,7 @@ Its intuitive design provides a delightful user experience, allowing users to ex
 - Dependency Injection:
   - Promotes a loosely coupled architecture by injecting dependencies like the ViewModel into the View.
 
-## Screenshots
+## (*)  Screenshots
 
 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
 
