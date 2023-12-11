@@ -34,7 +34,7 @@ struct TrendingMoviesScreen: View {
                     case .success(let movies):
                         ScrollView(showsIndicators: false){
                             LazyVStack{
-                                ForEach(model.listOfMovies) { movie in
+                                ForEach(movies) { movie in
                                     NavigationLink {
                                         MovieDetailsScreen(movieID: movie.id)
                                     } label: {
@@ -74,6 +74,15 @@ struct TrendingMoviesScreen: View {
             }
         }
         .onAppear(perform: model.discoverMovies)
+        .onChange(of: movieToSearch) { newValue in
+            if newValue.count > 2 {
+                model.searchMovie(text: newValue)
+            } else if newValue == "" {
+                model.discoverMovies()
+            }
+        }
+        
+
     
     
     }

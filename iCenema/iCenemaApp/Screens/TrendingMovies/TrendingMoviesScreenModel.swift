@@ -36,6 +36,14 @@ extension TrendingMoviesScreen {
             }
         }
         
+        func searchMovie(text: String) {
+            MoviesRepository.searchMovie(text: text) { movies in
+                self._uiState = .success(movies.results)
+            } failed: { error in
+                self._uiState = .failed(error?.message)
+            }
+
+        }
          func loadMoreMovies(){
              if !endOfPages{
                  page += 1

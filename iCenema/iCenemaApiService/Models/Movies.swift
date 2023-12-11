@@ -19,7 +19,7 @@ struct Movie: Decodable, Identifiable {
     let original_title: String
     let overview: String
     let original_language: String
-    let poster_path: String
+    let poster_path: String?
     let backdrop_path: String?
     let vote_average: Float
     let vote_count: Int
@@ -34,7 +34,7 @@ struct Movie: Decodable, Identifiable {
     
     var posterPathUrl: URL? {
         let baseURL = URL(string: "https://image.tmdb.org/t/p/w100")
-        return baseURL?.appending(path: poster_path)
+        return baseURL?.appending(path: poster_path ?? "")
     }
     
     var formmated_release_date: String {
