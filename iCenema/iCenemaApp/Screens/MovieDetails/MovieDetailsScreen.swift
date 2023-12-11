@@ -82,15 +82,18 @@ struct MovieDetailsScreen: View {
     
     @ViewBuilder
     private func aboutMovieCOmponent(text: String) -> some View{
-        VStack(alignment: .leading, spacing: 20) {
-            Text("About film")
-                .font(.white, .bold, 20)
-            Text(text)
-                .font(.white, .regular, 18)
-                .multilineTextAlignment(.leading)
-                .padding()
-                .background(RoundedRectangle(cornerRadius:15).foregroundColor(.secondaryApp))
-        }.padding()
+        ScrollView{
+            VStack(alignment: .leading, spacing: 20) {
+                       Text("About film")
+                           .font(.white, .bold, 20)
+                       Text(text)
+                           .font(.white, .regular, 18)
+                           .multilineTextAlignment(.leading)
+                           .padding()
+                           .background(RoundedRectangle(cornerRadius:15).foregroundColor(.secondaryApp))
+                   }.padding()
+        }
+       
     }
     
     @ViewBuilder
