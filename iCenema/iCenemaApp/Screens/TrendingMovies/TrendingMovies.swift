@@ -23,7 +23,6 @@ struct TrendingMoviesScreen: View {
                             .padding(.vertical, 8)
                         Spacer()
                     }
-                  
                     
                     switch model.uiState {
                     case .loading:
@@ -32,30 +31,40 @@ struct TrendingMoviesScreen: View {
                             .frame(width:50, height: 50)
                         Spacer()
                     case .success(let movies):
-                        ScrollView(showsIndicators: false){
-                            LazyVStack{
-                                ForEach(movies) { movie in
-                                    NavigationLink {
-                                        MovieDetailsScreen(movieID: movie.id)
-                                    } label: {
-                                        MovieCard(movieItem: movie)
-                                            .onAppear{
-                                                if movies.last?.id == movie.id {
-                                                   model.loadMoreMovies()
+                        if movies.isEmpty {
+                            Spacer()
+                                Image(systemName: "magnifyingglass")
+                                .font(.system(size: 34))
+                                .foregroundColor(.white)
+                                .padding()
+                                Text("Sorry! No result found (:")
+                                .font(.white, .regular, 22)
+                            Spacer()
+                        } else {
+                            ScrollView(showsIndicators: false){
+                                LazyVStack{
+                                    ForEach(movies) { movie in
+                                        NavigationLink {
+                                            MovieDetailsScreen(movieID: movie.id)
+                                        } label: {
+                                            MovieCard(movieItem: movie)
+                                                .onAppear{
+                                                    if movies.last?.id == movie.id {
+                                                       model.loadMoreMovies()
+                                                    }
                                                 }
-                                            }
+                                        }
+                                    }
+                                }
+                                Spacer().frame(height:  16)
+                                if model.isLoadingMore {
+                                    VStack{
+                                        Spacer()
+                                        CircularProgress().frame(width: 40, height: 40).padding(.bottom, 10)
+                                        Spacer()
                                     }
                                 }
                             }
-                            Spacer().frame(height:  16)
-                            if model.isLoadingMore {
-                                VStack{
-                                    Spacer()
-                                    CircularProgress().frame(width: 40, height: 40).padding(.bottom, 10)
-                                    Spacer()
-                                }
-                            }
-                    
                         }
 
                     case .failed(let errorMsg):
@@ -81,14 +90,8 @@ struct TrendingMoviesScreen: View {
                 model.discoverMovies()
             }
         }
-        
-
-    
-    
     }
 }
-
-
 
 struct CTrendingMovies_Previews: PreviewProvider {
     static var previews: some View {
