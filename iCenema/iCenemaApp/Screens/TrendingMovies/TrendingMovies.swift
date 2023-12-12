@@ -12,11 +12,9 @@ struct TrendingMoviesScreen: View {
     @State private var movieToSearch: String = ""
     
     var body: some View {
-        
-        
         NavigationStack{
             ZStack {
-                Color.primaryApp.ignoresSafeArea()
+                LinearGradient.backGroundeLinearGradient.ignoresSafeArea()
                 VStack {
                     HStack{
                         Text("Trending movies")
@@ -25,7 +23,6 @@ struct TrendingMoviesScreen: View {
                             .padding(.vertical, 8)
                         Spacer()
                     }
-
                     
                     switch model.uiState {
                     case .loading:
@@ -81,9 +78,7 @@ struct TrendingMoviesScreen: View {
                     default: EmptyView()
                     }
                 }
-                .background(Color.primaryApp.ignoresSafeArea())
-                .searchable(text: $movieToSearch)
-                
+                .searchable(text: $movieToSearch, prompt: "Search movie")
             }
         }
         .onAppear(perform: model.discoverMovies)

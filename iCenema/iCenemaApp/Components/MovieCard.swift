@@ -50,7 +50,7 @@ struct MovieCard: View {
             }
             .padding(.vertical,10)
             .padding(.horizontal,14)
-            .background(Color.secondaryApp)
+            .background(Color(red: 99/255, green: 55/255, blue: 175/255))
         }
         .cornerRadius(16)
         .padding(.horizontal,16)

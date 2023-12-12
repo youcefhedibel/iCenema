@@ -10,17 +10,22 @@ import Kingfisher
 
 struct MovieDetailsScreen: View {
     @StateObject private var model = Model()
+
     var movieID: Int
     var body: some View {
         ZStack{
-            Color.primaryApp.ignoresSafeArea()
-            VStack(alignment: .leading){
+            LinearGradient.backGroundeLinearGradient.ignoresSafeArea()
+            VStack{
+                BackButton()
+                
                 switch model.uiState {
                 case .loading:
-                    Spacer()
-                    CircularProgress(color: .white, lineWidth: 4)
-                        .frame(width: 50, height: 50)
-                    Spacer()
+                    VStack{
+                        Spacer()
+                        CircularProgress(color: .white, lineWidth: 4)
+                            .frame(width: 50, height: 50)
+                        Spacer()
+                    }
                 case .success(let movie):
                     KFImage(movie.backdropUrl)
                         .placeholder { _ in
@@ -43,7 +48,11 @@ struct MovieDetailsScreen: View {
             }.onAppear{
                 model.getMovieDetails(id: movieID)
             }
+            .padding(.top, .heightPer(per: 0.08))
+            
         }
+        . navigationBarBackButtonHidden(true)
+        .ignoresSafeArea()
        
     }
     
