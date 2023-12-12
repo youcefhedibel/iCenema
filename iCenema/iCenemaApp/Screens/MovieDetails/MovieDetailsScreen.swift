@@ -16,6 +16,7 @@ struct MovieDetailsScreen: View {
         ZStack{
             LinearGradient.backGroundeLinearGradient.ignoresSafeArea()
             VStack{
+                
                 BackButton()
                 
                 switch model.uiState {
