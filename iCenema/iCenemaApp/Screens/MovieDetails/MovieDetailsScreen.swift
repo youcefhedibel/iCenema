@@ -50,9 +50,9 @@ struct MovieDetailsScreen: View {
                 model.getMovieDetails(id: movieID)
             }
             .padding(.top, .heightPer(per: 0.08))
+            .navigationBarBackButtonHidden(true)
             
         }
-        . navigationBarBackButtonHidden(true)
         .ignoresSafeArea()
        
     }

@@ -74,6 +74,14 @@ struct TrendingMoviesScreen: View {
                             .foregroundColor(.primaryText)
                         Text(errorMsg ?? "")
                             .font(.primaryText, .regular, 20)
+                        Button {
+                            model.discoverMovies()
+                        } label: {
+                            Text("try again")
+                                .font(.white, .semiBold, 16)
+                        }.padding(5)
+                            .background(RoundedRectangle(cornerRadius: 8).foregroundColor(.secondaryApp))
+                        
                         Spacer()
                     default: EmptyView()
                     }
