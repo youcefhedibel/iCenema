@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BackButton: View {
-    @Environment(\.presentationMode) private var presentationMode
+    @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
 
     var body: some View {
         Button(action: {
@@ -17,12 +17,11 @@ struct BackButton: View {
             HStack {
                 Image(systemName: "chevron.backward.circle.fill")
                     .foregroundColor(.primaryText)
-                    .font(.system(size: 25))
+                    .font(.system(size: 22))
                 Text("Back")
                     .font(.primaryText, .regular, 18)
             }
-            Spacer()
         }
-        .padding()
     }
 }
+

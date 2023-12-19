@@ -16,9 +16,6 @@ struct MovieDetailsScreen: View {
         ZStack{
             LinearGradient.backGroundeLinearGradient.ignoresSafeArea()
             VStack{
-                
-                BackButton()
-                
                 switch model.uiState {
                 case .loading:
                     VStack{
@@ -46,12 +43,14 @@ struct MovieDetailsScreen: View {
                 default: EmptyView()
                 }
 
-            }.onAppear{
+            }
+            .padding(.top, CGFloat.heightPer(per: 0.06))
+            .onAppear{
                 model.getMovieDetails(id: movieID)
             }
             .padding(.top, .heightPer(per: 0.08))
             .navigationBarBackButtonHidden(true)
-            
+            .navigationBarItems(leading: BackButton())
         }
         .ignoresSafeArea()
        
