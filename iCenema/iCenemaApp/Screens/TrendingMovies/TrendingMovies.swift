@@ -86,7 +86,7 @@ struct TrendingMoviesScreen: View {
                     default: EmptyView()
                     }
                 }
-                .searchable(text: $movieToSearch, prompt: "Search movie")
+                .searchable(text: $movieToSearch, prompt: "Search movie").foregroundColor(.white)
             }
         }
         .onAppear(perform: model.discoverMovies)
