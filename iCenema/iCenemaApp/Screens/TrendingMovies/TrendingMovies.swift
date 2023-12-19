@@ -49,7 +49,7 @@ struct TrendingMoviesScreen: View {
                                         } label: {
                                             MovieCard(movieItem: movie)
                                                 .onAppear{
-                                                    if movies.last?.id == movie.id {
+                                                    if (movies.last?.id == movie.id && movieToSearch.isEmpty) {
                                                        model.loadMoreMovies()
                                                     }
                                                 }
