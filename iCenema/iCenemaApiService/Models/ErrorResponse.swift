@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+//test
 public struct ErrorResponse: Decodable {
     public let code: Int
     public let message: String
